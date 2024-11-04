@@ -1,3 +1,6 @@
+using BusinessLogic.Contracts;
+using BusinessLogic.Services;
+
 namespace DemoMvcApp
 {
     public class Program
@@ -8,6 +11,8 @@ namespace DemoMvcApp
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddScoped<IRecipeService, RecipeService>();
 
             var app = builder.Build();
 
