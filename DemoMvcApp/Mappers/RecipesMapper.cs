@@ -1,5 +1,6 @@
 ﻿using BusinessLogic.Models;
 using DemoMvcApp.Models;
+using System.Text.RegularExpressions;
 
 namespace DemoMvcApp.Mappers
 {
@@ -7,9 +8,11 @@ namespace DemoMvcApp.Mappers
     {
         public static RecipesViewModel ToViewModel(this Recipe recipe)
         {
+            var path = Regex.Replace(recipe.Name, @"\W+", string.Empty);
             return new RecipesViewModel
             {
                 Id = recipe.Id,
+                Path = path,
                 Name = recipe.Name,
                 ImageUrl = recipe.ImageUrl,
                 Ingredients = recipe.Ingredients,
