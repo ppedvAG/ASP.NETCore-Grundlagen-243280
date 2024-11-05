@@ -34,6 +34,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Labs", "Labs", "{EDEF4C3F-F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabDependencyInjection", "LabDependencyInjection\LabDependencyInjection.csproj", "{817E0034-6541-4E06-A90E-EDC1D16E47BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStore", "MovieStore\MovieStore.csproj", "{48735F22-3D37-4EA3-BA76-2F53E9C1629B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +74,10 @@ Global
 		{817E0034-6541-4E06-A90E-EDC1D16E47BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{817E0034-6541-4E06-A90E-EDC1D16E47BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{817E0034-6541-4E06-A90E-EDC1D16E47BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48735F22-3D37-4EA3-BA76-2F53E9C1629B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48735F22-3D37-4EA3-BA76-2F53E9C1629B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48735F22-3D37-4EA3-BA76-2F53E9C1629B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48735F22-3D37-4EA3-BA76-2F53E9C1629B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +91,7 @@ Global
 		{D81792C4-4ABB-417F-972C-62CDEF45C9E3} = {52133267-3A16-4248-A3AB-C9D1EAC42FD2}
 		{701F65D2-0B4E-496C-A4CF-D0B999979AF6} = {8A5970BB-BA35-490F-AC3F-C619639B384A}
 		{817E0034-6541-4E06-A90E-EDC1D16E47BB} = {EDEF4C3F-F55F-41F7-9EEE-7669A230B9CE}
+		{48735F22-3D37-4EA3-BA76-2F53E9C1629B} = {EDEF4C3F-F55F-41F7-9EEE-7669A230B9CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0B3AB467-D0B3-4710-AA40-3F4B00294343}
