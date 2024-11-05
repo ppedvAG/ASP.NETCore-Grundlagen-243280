@@ -34,10 +34,10 @@ Kurs Repository zum Kurs ASP.NET Core Grundkurs der ppedv AG.
 
 ## M006 | FileServer erstellen
 
-	-	[ ] Static Files und Directory Browser
-	-	[ ] File Provider und Dateizugriff
-	-	[ ] [Hoppscotch](https://hoppscotch.io/) (Postman Alternative)
-	-	[ ] API mit [httpFile testen](https://learn.microsoft.com/de-de/aspnet/core/test/http-files?view=aspnetcore-8.0) 
+	-	[x] Static Files und Directory Browser
+	-	[x] File Provider und Dateizugriff
+	-	[x] [Hoppscotch](https://hoppscotch.io/) (Postman Alternative)
+	-	[x] API mit [httpFile testen](https://learn.microsoft.com/de-de/aspnet/core/test/http-files?view=aspnetcore-8.0) 
 	-	[ ] Middleware
 
 ## M007 | HttpClient verwenden
