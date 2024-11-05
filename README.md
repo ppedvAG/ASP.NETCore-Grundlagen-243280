@@ -17,8 +17,8 @@ Kurs Repository zum Kurs ASP.NET Core Grundkurs der ppedv AG.
 ## M003 | Model View Controller (MVC)
 
 	-	[x] Overview
-	-	[ ] Links setzen
-	-	[ ] Details
+	-	[x] Links setzen
+	-	[x] Details
 
 ## M004 | Razor Pages
 
@@ -28,9 +28,9 @@ Kurs Repository zum Kurs ASP.NET Core Grundkurs der ppedv AG.
 
 ## M005 | Forms und Validierung
 
-	-	[ ] ViewModel Mapping
-	-	[ ] Form Post & Validierung
-	-	[ ] ModelState
+	-	[x] ViewModel Mapping
+	-	[x] Form Post & Validierung
+	-	[x] ModelState
 
 ## M006 | FileServer erstellen
 

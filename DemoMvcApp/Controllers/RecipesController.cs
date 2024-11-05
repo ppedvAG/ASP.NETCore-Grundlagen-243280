@@ -8,10 +8,12 @@ namespace DemoMvcApp.Controllers
     public class RecipesController : Controller
     {
         private readonly IRecipeService _recipeService;
+        private readonly ILogger<RecipesController> _logger;
 
-        public RecipesController(IRecipeService recipeService)
+        public RecipesController(IRecipeService recipeService, ILogger<RecipesController> logger)
         {
             _recipeService = recipeService;
+            _logger = logger;
         }
 
         // GET: RecipesController
@@ -37,17 +39,29 @@ namespace DemoMvcApp.Controllers
         // POST: RecipesController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(RecipesViewModel model)
+        public ActionResult Create(CreateRecipeViewModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                _recipeService.AddRecipe(model.ToDomainModel());
-                return RedirectToAction(nameof(Index));
-            }
-            catch
+                try
+                {
+                    _recipeService.AddRecipe(model.ToDomainModel());
+                    return RedirectToAction(nameof(Index));
+                }
+                catch(Exception ex)
+                {
+                    _logger.LogError("Recipe could not be created: " + ex.Message);
+                    ModelState.AddModelError(string.Empty, ex.Message);
+                }
+            } 
+            else
             {
-                return View();
+                var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
+                ModelState.AddModelError(string.Empty, string.Join(Environment.NewLine, errors));
             }
+
+            // Wir muessen das Model zurueckgeben, damit der Benutzer die Formulardaten nicht erneut eintrage muss.
+            return View(model);
         }
 
         // GET: RecipesController/Edit/5

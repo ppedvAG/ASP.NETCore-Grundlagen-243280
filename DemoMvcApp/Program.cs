@@ -12,7 +12,7 @@ namespace DemoMvcApp
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            builder.Services.AddScoped<IRecipeService, RecipeService>();
+            builder.Services.AddSingleton<IRecipeService, RecipeService>();
 
             var app = builder.Build();
 

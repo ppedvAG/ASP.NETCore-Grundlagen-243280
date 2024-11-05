@@ -24,7 +24,7 @@ namespace BusinessLogic.Services
 
         public void AddRecipe(Recipe recipe)
         {
-            _recipes.Add(recipe);
+            _recipes.Insert(0, recipe);
         }
 
         public void UpdateRecipe(Recipe recipe)
