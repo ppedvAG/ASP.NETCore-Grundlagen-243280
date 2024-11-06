@@ -83,7 +83,7 @@ Update-Database
 
 ## M011 | Weitere Themen
 
-	-   [ ] Lokalisierung
+	-   [x] Lokalisierung
 	-   [ ] Cookie Handling
 	-   [ ] Server Caching
 	-   [ ] Deployment IIS Server
