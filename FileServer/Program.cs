@@ -1,5 +1,6 @@
 
 
+using FileServer.Middlewares;
 using Microsoft.Extensions.FileProviders;
 
 namespace FileServer
@@ -32,6 +33,8 @@ namespace FileServer
                 FileProvider = fileProvider,
                 RequestPath = $"/{FILE_PATH}"
             });
+
+            app.UseSecuredAccess();
 
             app.UseAuthorization();
 

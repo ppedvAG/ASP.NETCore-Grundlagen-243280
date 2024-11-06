@@ -11,7 +11,7 @@ namespace DemoMvcApp
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddScoped<IFileService, RemoteFileService>();
+            builder.Services.AddTransient<IFileService, RemoteFileService>();
             builder.Services.AddSingleton<IRecipeService, RecipeService>();
 
             // Wir mappen die Einstellungen aus der appsettings.json nach FileServerOptions
