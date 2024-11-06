@@ -17,7 +17,7 @@ namespace DemoMvcApp
 
             // Wir mappen die Einstellungen aus der appsettings.json nach FileServerOptions
             var fileConfig = builder.Configuration.GetSection("FileServer");
-            builder.Services.Configure<FileServerOptions>(fileConfig);
+            builder.Services.Configure<FileServiceOptions>(fileConfig);
             builder.Services.AddHttpClient();
 
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
