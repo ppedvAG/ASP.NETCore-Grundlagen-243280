@@ -65,7 +65,7 @@ Update-Database
 
 ## M009 | Entity Framework DB First
 
-	-	[ ] Unit Tests mit EntityFramework
+	-	[x] Unit Tests mit EntityFramework
 	-	[ ] OrderService anhand von Tests entwickeln
 	-	[ ] DB First Ansatz
 	-	[ ] VS Extension [EF Core Power Tools](https://marketplace.visualstudio.com/items?itemName=ErikEJ.EFCorePowerTools)
