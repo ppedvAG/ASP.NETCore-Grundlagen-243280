@@ -1,9 +1,11 @@
 ﻿using BusinessLogic.Models.Enums;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 
 namespace BusinessLogic.Models
 {
+    [PrimaryKey(nameof(Id))]
     [DebuggerDisplay("{Id}, {Name}, {Difficulty}, {Cuisine}, {CaloriesPerServing}, {Rating}, {Tags}")]
     public class Recipe
     {

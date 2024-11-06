@@ -1,4 +1,5 @@
 using BusinessLogic.Contracts;
+using BusinessLogic.Data;
 using BusinessLogic.Services;
 
 namespace DemoMvcApp
@@ -12,12 +13,15 @@ namespace DemoMvcApp
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddTransient<IFileService, RemoteFileService>();
-            builder.Services.AddSingleton<IRecipeService, RecipeService>();
+            builder.Services.AddSingleton<IRecipeService, SimpleRecipeService>();
 
             // Wir mappen die Einstellungen aus der appsettings.json nach FileServerOptions
             var fileConfig = builder.Configuration.GetSection("FileServer");
             builder.Services.Configure<FileServerOptions>(fileConfig);
             builder.Services.AddHttpClient();
+
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Services.AddSqlServer<DemoDbContext>(connectionString);
 
             var app = builder.Build();
 

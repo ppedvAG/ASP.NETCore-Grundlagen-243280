@@ -1,6 +1,7 @@
 ﻿using BusinessLogic.Contracts;
 using BusinessLogic.Data;
 using BusinessLogic.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BusinessLogic.Services
 {
@@ -8,40 +9,45 @@ namespace BusinessLogic.Services
     /// Service welcher den Datenbankzugriff abbilden soll, vgl. <see href="https://de.wikipedia.org/wiki/Repository_(Entwurfsmuster)"/> Repository-Pattern.</see>
     /// Dieser Service bildet CRUD Operationen auf die Rezepte ab.
     /// </summary>
-    public class RecipeService : IRecipeService
+    public class RecipeService
     {
-        private readonly List<Recipe> _recipes = RecipeReader.FromJsonFile() ?? new List<Recipe>();
+        private readonly DemoDbContext _context;
 
-        public List<Recipe> GetRecipes()
+        public RecipeService(DemoDbContext context)
         {
-            return _recipes;
+            _context = context;
         }
 
-        public Recipe GetRecipe(int id)
+        public async Task<List<Recipe>> GetRecipes()
         {
-            return _recipes.FirstOrDefault(r => r.Id == id);
+            return await _context.Recipes.ToListAsync();
         }
 
-        public void AddRecipe(Recipe recipe)
+        public Task<Recipe?> GetRecipe(int id)
         {
-            _recipes.Insert(0, recipe);
+            return _context.Recipes.FirstOrDefaultAsync(r => r.Id == id);
         }
 
-        public void UpdateRecipe(Recipe recipe)
+        public async Task AddRecipe(Recipe recipe)
         {
-            var index = _recipes.FindIndex(r => r.Id == recipe.Id);
-            if (index >= 0)
+            _context.Recipes.Add(recipe);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateRecipe(Recipe recipe)
+        {
+            _context.Update(recipe);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<bool> DeleteRecipe(int id)
+        {
+            var recipe = await GetRecipe(id);
+            if (recipe != null)
             {
-                _recipes[index] = recipe;
-            }
-        }
+                _context.Recipes.Remove(recipe);
+                await _context.SaveChangesAsync();
 
-        public bool DeleteRecipe(int id)
-        {
-            var index = _recipes.FindIndex(r => r.Id == id);
-            if (index >= 0)
-            {
-                _recipes.RemoveAt(index);
                 return true;
             }
             return false;
