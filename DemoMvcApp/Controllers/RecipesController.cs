@@ -2,17 +2,20 @@
 using DemoMvcApp.Mappers;
 using DemoMvcApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.FileProviders;
 
 namespace DemoMvcApp.Controllers
 {
     public class RecipesController : Controller
     {
         private readonly IRecipeService _recipeService;
+        private readonly IFileService _fileService;
         private readonly ILogger<RecipesController> _logger;
 
-        public RecipesController(IRecipeService recipeService, ILogger<RecipesController> logger)
+        public RecipesController(IRecipeService recipeService, IFileService fileService, ILogger<RecipesController> logger)
         {
             _recipeService = recipeService;
+            _fileService = fileService;
             _logger = logger;
         }
 
@@ -39,8 +42,10 @@ namespace DemoMvcApp.Controllers
         // POST: RecipesController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(CreateRecipeViewModel model)
+        public async Task<ActionResult> Create(CreateRecipeViewModel model)
         {
+            model.ImageUrl = await UploadFile(model.Image);
+
             if (ModelState.IsValid)
             {
                 try
@@ -62,6 +67,24 @@ namespace DemoMvcApp.Controllers
 
             // Wir muessen das Model zurueckgeben, damit der Benutzer die Formulardaten nicht erneut eintrage muss.
             return View(model);
+        }
+
+        private async Task<string> UploadFile(IFormFile? file)
+        {
+            if (file != null)
+            {
+                using var stream = file.OpenReadStream();
+                try
+                {
+                    return await _fileService.UploadFile(file.FileName, stream);
+                }
+                catch(Exception ex)
+                {
+                    _logger.LogError("File could not be uploaded: " + ex.Message);
+                    ModelState.AddModelError(string.Empty, ex.Message);
+                }
+            }
+            return string.Empty;
         }
 
         // GET: RecipesController/Edit/5

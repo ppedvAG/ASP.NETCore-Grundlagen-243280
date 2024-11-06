@@ -8,8 +8,7 @@ namespace DemoMvcApp.Models
         [Required]
         public string Name { get; set; }
 
-        [Display(Name = "Image Url")]
-        public string? ImageUrl { get; set; }
+        public IFormFile? Image { get; set; }
 
         public string? Ingredients { get; set; }
 

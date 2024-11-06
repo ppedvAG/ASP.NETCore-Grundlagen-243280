@@ -9,7 +9,7 @@ namespace DemoMvcApp.Models
 
         public string Name { get; set; }
 
-        public string ImageUrl { get; set; }
+        public string? ImageUrl { get; set; }
 
         public string[] Ingredients { get; set; }
 
