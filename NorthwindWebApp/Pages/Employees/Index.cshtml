@@ -110,7 +110,7 @@
                 @Html.DisplayFor(modelItem => item.Extension)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Photo)
+                <img src="data:image/bmp;base64,@Convert.ToBase64String(item.Photo)" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Notes)
