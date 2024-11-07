@@ -1,6 +1,7 @@
 using BusinessLogic.Contracts;
 using BusinessLogic.Data;
 using BusinessLogic.Services;
+using DemoMvcApp.Data;
 
 namespace DemoMvcApp
 {
@@ -22,6 +23,9 @@ namespace DemoMvcApp
 
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddSqlServer<DemoDbContext>(connectionString);
+
+            var accountConnectionString = builder.Configuration.GetConnectionString("AccountConnection");
+            builder.Services.AddSqlServer<AccountDbContext>(accountConnectionString);
 
             var app = builder.Build();
 

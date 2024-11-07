@@ -75,8 +75,8 @@ Update-Database
 
 ## M010 | Benutzerverwaltung
 
-	-   [ ] AspNetCore.Identity.EFCore
-	-	[ ] CodeFirst & Migration
+	-   [x] AspNetCore.Identity.EFCore
+	-	[x] CodeFirst & Migration
 	-   [ ] UserManager & SignInManager
 	-	[ ] Form Post & Validierung
 
