@@ -1,3 +1,4 @@
+using MovieMvcApp.Middleware;
 using MovieStore.Contracts;
 using MovieStore.Services;
 
@@ -29,6 +30,8 @@ namespace MovieMvcApp
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseRequestCultureMiddleware();
 
             app.MapControllerRoute(
                 name: "default",
