@@ -24,9 +24,6 @@ namespace DemoMvcApp
             builder.Services.AddHttpClient();
 
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-
-            builder.Services.AddDbContext<AccountDbContext>(options => options.UseSqlServer(connectionString));
-
             builder.Services.AddSqlServer<DemoDbContext>(connectionString);
 
             var accountConnectionString = builder.Configuration.GetConnectionString("AccountConnection");
