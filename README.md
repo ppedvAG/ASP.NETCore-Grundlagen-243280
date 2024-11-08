@@ -79,6 +79,7 @@ Update-Database
 	-	[x] CodeFirst & Migration
 	-   [x] UserManager & SignInManager
 	-	[x] Form Post & Validierung
+	-	[x] MS Identity Platform gegen EntraId und GraphAPI
 
 
 ## M011 | Weitere Themen
