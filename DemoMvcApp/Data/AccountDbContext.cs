@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DemoMvcApp.Data
 {
-    public class AccountDbContext : IdentityDbContext<AppUser>
+    public class AccountDbContext : IdentityDbContext
     {
         public AccountDbContext(DbContextOptions<AccountDbContext> options)
             : base(options)

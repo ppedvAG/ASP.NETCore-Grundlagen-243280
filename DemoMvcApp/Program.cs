@@ -2,6 +2,8 @@ using BusinessLogic.Contracts;
 using BusinessLogic.Data;
 using BusinessLogic.Services;
 using DemoMvcApp.Data;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace DemoMvcApp
 {
@@ -22,10 +24,18 @@ namespace DemoMvcApp
             builder.Services.AddHttpClient();
 
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+            builder.Services.AddDbContext<AccountDbContext>(options => options.UseSqlServer(connectionString));
+
             builder.Services.AddSqlServer<DemoDbContext>(connectionString);
 
             var accountConnectionString = builder.Configuration.GetConnectionString("AccountConnection");
             builder.Services.AddSqlServer<AccountDbContext>(accountConnectionString);
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => 
+            {
+                options.Password.RequiredLength = 6;
+                options.Password.RequireNonAlphanumeric = false;
+            }).AddEntityFrameworkStores<AccountDbContext>();
 
             var app = builder.Build();
 
@@ -43,6 +53,7 @@ namespace DemoMvcApp
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.MapControllerRoute(
                 name: "default",

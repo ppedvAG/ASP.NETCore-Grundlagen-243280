@@ -34,8 +34,10 @@ namespace FileServer.Middlewares
                     await context.Response.WriteAsync("Unauthorized");
                 }
             }
-
-            await _next(context);
+            else
+            {
+                await _next(context);
+            }
         }
     }
 

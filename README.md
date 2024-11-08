@@ -77,8 +77,8 @@ Update-Database
 
 	-   [x] AspNetCore.Identity.EFCore
 	-	[x] CodeFirst & Migration
-	-   [ ] UserManager & SignInManager
-	-	[ ] Form Post & Validierung
+	-   [x] UserManager & SignInManager
+	-	[x] Form Post & Validierung
 
 
 ## M011 | Weitere Themen
