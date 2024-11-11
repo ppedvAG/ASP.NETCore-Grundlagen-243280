@@ -1,0 +1,44 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div>
+	<a>Username: </a>
+	<br/>
+	<input id="username" />
+	<br />
+	<a>Nachricht: </a>
+	<br />
+	<input id="nachricht" />
+	<br />
+	<button id="senden">Nachricht senden</button>
+	<br />
+	<ul id="chatverlauf"></ul>
+</div>
+
+@*Hier muss das SignalR Skript eingebunden werden*@
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+
+<script>
+	//Verbindung aufbauen und herstellen
+	var conn = new signalR.HubConnectionBuilder().withUrl("/chat").build();
+	conn.start();
+
+	//Empfänger bauen
+	//-> Hört auf NachrichtSenden (von C#), und macht etwas
+	conn.on("NachrichtEmpfangen", function (username, nachricht) {
+		//Erstelle ein neues li Element und hänge dieses an das ul Element oben an
+		var li = document.createElement("li");
+		li.textContent = username + " sagt: " + nachricht;
+		document.getElementById("chatverlauf").appendChild(li);
+	});
+
+	//Sender bauen
+	document.getElementById("senden").addEventListener("click", function (e) {
+		var user = document.getElementById("username").value;
+		var msg = document.getElementById("nachricht").value;
+		conn.invoke("NachrichtSenden", user, msg);
+	});
+</script>

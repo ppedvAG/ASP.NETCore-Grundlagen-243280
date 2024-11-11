@@ -1,0 +1,22 @@
+﻿@page
+@using RazorPagesTest.Pages
+@model FrontendBackendCombinedModel
+
+@*inject: DependencyInjection im Frontend*@
+@inject ILogger<FrontendBackendCombinedModel> logger
+
+@*functions: Funktionen, welche normalerweise im Backend liegen würden, im Frontend ablegen*@
+@functions
+{
+	public void OnGet()
+	{
+		
+	}
+}
+
+@section Scripts
+{
+	<script>
+		//...
+	</script>
+}

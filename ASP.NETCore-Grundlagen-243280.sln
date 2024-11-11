@@ -48,13 +48,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwindWebApp", "Northwin
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "M010-Authentification", "M010-Authentification", "{5BE2A566-199B-4D73-985F-6CCC69901AAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsIdentityPlatformDemo", "MsIdentityPlatformDemo\MsIdentityPlatformDemo.csproj", "{A8C19805-2825-4255-9405-00C7FA727EF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MsIdentityPlatformDemo", "MsIdentityPlatformDemo\MsIdentityPlatformDemo.csproj", "{A8C19805-2825-4255-9405-00C7FA727EF4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "M007-HttpClient", "M007-HttpClient", "{A7A9692B-F90E-4CE4-8D3D-D3992F2FECAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindWebApi", "NorthwindWebApi\NorthwindWebApi.csproj", "{0ED41B9C-66AD-4EB8-A0E0-A5676A13FC08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwindWebApi", "NorthwindWebApi\NorthwindWebApi.csproj", "{0ED41B9C-66AD-4EB8-A0E0-A5676A13FC08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindHttpClient", "NorthwindHttpClient\NorthwindHttpClient.csproj", "{C7BE07BF-7026-43B5-A1F0-5C6C934976FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthwindHttpClient", "NorthwindHttpClient\NorthwindHttpClient.csproj", "{C7BE07BF-7026-43B5-A1F0-5C6C934976FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorPagesTest", "RazorPagesTest\RazorPagesTest.csproj", "{4C272BB2-CE0F-4576-B05D-32B137F2F948}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRDemo", "SignalRDemo\SignalRDemo.csproj", "{E786BED9-2D3D-46D2-9054-94BC9881B5F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorDemo", "BlazorDemo\BlazorDemo\BlazorDemo.csproj", "{38E7DC5F-C55E-4490-9D19-FAB6C7F72909}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorDemo.Client", "BlazorDemo\BlazorDemo.Client\BlazorDemo.Client.csproj", "{6239AE1F-E30B-4EEB-AD97-F0B8189B599E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookiesCaching", "CookiesCaching\CookiesCaching.csproj", "{33E77FEB-7010-47A8-91E5-F68839C58341}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -122,6 +132,26 @@ Global
 		{C7BE07BF-7026-43B5-A1F0-5C6C934976FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7BE07BF-7026-43B5-A1F0-5C6C934976FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7BE07BF-7026-43B5-A1F0-5C6C934976FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C272BB2-CE0F-4576-B05D-32B137F2F948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C272BB2-CE0F-4576-B05D-32B137F2F948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C272BB2-CE0F-4576-B05D-32B137F2F948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C272BB2-CE0F-4576-B05D-32B137F2F948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E786BED9-2D3D-46D2-9054-94BC9881B5F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E786BED9-2D3D-46D2-9054-94BC9881B5F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E786BED9-2D3D-46D2-9054-94BC9881B5F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E786BED9-2D3D-46D2-9054-94BC9881B5F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38E7DC5F-C55E-4490-9D19-FAB6C7F72909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38E7DC5F-C55E-4490-9D19-FAB6C7F72909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38E7DC5F-C55E-4490-9D19-FAB6C7F72909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38E7DC5F-C55E-4490-9D19-FAB6C7F72909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6239AE1F-E30B-4EEB-AD97-F0B8189B599E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6239AE1F-E30B-4EEB-AD97-F0B8189B599E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6239AE1F-E30B-4EEB-AD97-F0B8189B599E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6239AE1F-E30B-4EEB-AD97-F0B8189B599E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33E77FEB-7010-47A8-91E5-F68839C58341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33E77FEB-7010-47A8-91E5-F68839C58341}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33E77FEB-7010-47A8-91E5-F68839C58341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33E77FEB-7010-47A8-91E5-F68839C58341}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

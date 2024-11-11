@@ -1,0 +1,51 @@
+﻿@*Page: Definiert die Route der Page*@
+@*Standardmäßig, wird hier die Ordnerstruktur + Name der Datei eingetragen (Pfad)*@
+@*Hier kann auch optional ein Query-Parameter mitgegeben werden (/Index/{id?})*@
+@page "/Index"
+
+@*Bei Razor Pages hat jedes File automatisch ein Model (Backendklasse)*@
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<a>@Model.Length</a>
+
+<a asp-page="PageWithID">Page ID</a>
+
+<form method="post">
+	@*name= um den Parameter an die andere Page weiterzugeben*@
+	<input name="vorname" />
+	<button type="submit" asp-page="PageWithID">Eingabe bestätigen</button>
+</form>
+
+<br />
+<br />
+<br />
+
+@*Beispiel: 2 Formulare, mit 2 unterschiedlichen Post-Methoden in der anderen Page*@
+<form method="post">
+	<a>Login: </a>
+	<br/>
+	<input name="username" />
+	<br />
+	<input name="passwort" />
+	<br />
+	<button type="submit" asp-page="LoginRegister" asp-page-handler="Login">Login</button>
+</form>
+
+<form method="post">
+	<a>Registrieren: </a>
+	<br />
+	<input name="username" />
+	<br />
+	<input name="passwort" />
+	<br />
+	<button type="submit" asp-page="LoginRegister" asp-page-handler="Register">Registrieren</button>
+</form>
